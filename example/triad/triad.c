@@ -18,9 +18,9 @@ void triad(int *a,int *b, int *c, int s){
 
 int main(){
 	int *a, *b, *c;
-    a = (int *) malloc (sizeof(int) * NUM);
-    b = (int *) malloc (sizeof(int) * NUM);
-    c = (int *) malloc (sizeof(int) * NUM);
+	a = (int *) malloc (sizeof(int) * NUM);
+	b = (int *) malloc (sizeof(int) * NUM);
+	c = (int *) malloc (sizeof(int) * NUM);
 	int i;
 	srand(time(NULL));
 	for(i=0; i<NUM; i++){
