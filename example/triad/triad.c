@@ -1,8 +1,17 @@
 #include "triad.h"
 
+void my_print(int *c){
+	FILE *output;
+	output = fopen("output.data", "w");
+	int i = 0;
+	for(i=0; i<NUM; i++)
+		fprintf(output, "%d,", c[i]);
+	fprintf(output, "\n");
+	fclose(output);
+}
 void triad(int *a,int *b, int *c, int s){
 	int i;
-loop:	for(i=0;i<NUM;i++){
+	for(i=0;i<NUM;i++){
 		c[i] = a[i] + s*b[i];
 	}
 }
@@ -13,20 +22,12 @@ int main(){
     b = (int *) malloc (sizeof(int) * NUM);
     c = (int *) malloc (sizeof(int) * NUM);
 	int i;
-  srand(time(NULL));
-init:	for(i=0; i<NUM; i++){
-		c[i] = 0;
+	srand(time(NULL));
+	for(i=0; i<NUM; i++){
 		a[i] = rand();
 		b[i] = rand();
 	}
-
 	triad(&a[0],&b[0],&c[0],3);
-
-  FILE *output;
-  output = fopen("output.data", "w");
-	for(i=0; i<NUM; i++)
-    fprintf(output, "%d,", c[i]);
-  fprintf(output, "\n");
-  fclose(output);
+	my_print(&c[0]);
 	return 0;
 }
