@@ -5,3 +5,4 @@
 #define NUM 2048
 
 void triad(int *a,int *b, int *c, int s);
+void my_print(int *c);
